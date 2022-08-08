@@ -32,7 +32,7 @@ instance:
     configurations:
         contact:
             type: sms
-            number: '447441446999'
+            number: '$YOUR_VONAGE_NUMBER'
 debug:
     name: debug
     entrypoint: [nodemon, --exec, python3, -m, debugpy, --listen, localhost:9229, main.py]
