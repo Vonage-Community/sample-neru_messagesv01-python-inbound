@@ -2,6 +2,13 @@
 
 This project shows how to use NeRu and Python to receive and send SMS messages with the Messages API V0.1.
 
+## Receive Inbound SMS Webhooks
+
+To receive inbound SMS messages to your NeRu applications you will need to update your API Settings on the Vonage Dashboard to send inbound SMS webhooks to the Messages API:
+
+![API Settings SMS Webhook Toggle](sms-webhooks.png)
+
+
 ## Running the project
 
 Create a Vonage Application if you do not have one already, and [link a phone number](https://dashboard.nexmo.com) to the application:
@@ -28,7 +35,7 @@ instance:
     application-id: $YOUR_VONAGE_APPLICATION_ID
     entrypoint: [python3, main.py]
     capabilities:
-        - messaging
+        - messages-v0.1
     environment:
         - name: VONAGE_NUMBER
           value: "$YOUR_VONAGE_NUMBER"
@@ -60,10 +67,6 @@ Then start the project locally using:
 ```sh
 neru debug
 ```
-
-Go to [your application](https://dashboard.nexmo.com/applications) on the Vonage API Dashboard and set the right version of Messages API. For this app it should be v0.1:
-
-![dashboard messages setting](dashboard.png)
 
 Now you text the number linked to your application.
 
